@@ -1,0 +1,14 @@
+1|Ryzhenkov|Nikita|Alekseevich
+2|Nikki||
+3|Ivanov|Ivan|Ivanich
+4|Kakoito|Mushick|Odnosnachno
+5|||
+6|Bad|Ankle|Billy
+7|Just|A|Guy
+8|John|Smith|
+9|Crazy|Willy|Smallhead
+10|Big|Fat|Guy
+11|Good|Ankle|Billy
+12|Sidorov|Potap|Anatolievich
+13|John|Smith|Johnovich
+14||God|
