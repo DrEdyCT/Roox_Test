@@ -3,7 +3,7 @@
 
 from flask import Flask, jsonify
 from flask import request
-import names_db
+from db import names_db
 
 app = Flask(__name__)
 GET_text = 'Welcome to test web-service. Please use POST request to get json with full user name'

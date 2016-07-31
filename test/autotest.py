@@ -1,15 +1,17 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import requests
 import sys
+
+import requests
 from flask import json
-import web_service
 from test_data import getData
+from web_service import web_service
+
 
 class webAppAutotest():
     url = 'http://127.0.0.1:5000'
-    test_logs = sys.path[0] + '/log.txt'
+    test_logs = sys.path[1] + '/test/log.txt'
     error_counter = 0
 
     def __init__(self):

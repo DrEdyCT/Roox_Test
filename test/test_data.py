@@ -3,14 +3,11 @@
 
 import sys
 from random import randint
+from db import names_db
 
 def getData():
 
-    # получить количество ФИО
-    with open(sys.path[0] + '/names.txt') as f:
-        users_data = f.readlines()
-
-    max_value = len(users_data)
+    max_value = names_db.names().getTableCount()
     invalid_random = randint(max_value + 1, max_value + 100000)
 
     test_data = [

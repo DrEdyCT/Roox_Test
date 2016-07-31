@@ -12,7 +12,7 @@ class names(object):
         self.close()
 
     def connect(self):
-        self.db = sqlite3.connect('names.db')
+        self.db = sqlite3.connect('db/names.db')
         self.cur = self.db.cursor()
 
     def close(self):
@@ -23,7 +23,7 @@ class names(object):
         self.db.commit()
 
     def createTestData(self):
-        with open(sys.path[0] + '/names.txt') as f:
+        with open(sys.path[1] + '/db/names.txt') as f:
             users_data = f.readlines()
         for user_data in users_data:
             data = user_data.split('|')
@@ -48,3 +48,10 @@ class names(object):
         items = self.cur.fetchall()
         self.close()
         return items
+
+    def getTableCount(self):
+        self.connect()
+        self.cur.execute('SELECT COUNT(*) FROM names')
+        count = self.cur.fetchall()
+        self.close()
+        return count[0][0]

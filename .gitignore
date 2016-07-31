@@ -1,4 +1,4 @@
-log.txt
-names.db
+test/log.txt
+db/names.db
 .idea
 *.pyc
