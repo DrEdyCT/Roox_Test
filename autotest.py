@@ -2,14 +2,18 @@
 # -*- coding: utf-8 -*-
 
 import requests
+import sys
 from flask import json
-
 import web_service
 from test_data import getData
 
 class webAppAutotest():
     url = 'http://127.0.0.1:5000'
+    test_logs = sys.path[0] + '/log.txt'
     error_counter = 0
+
+    def __init__(self):
+        self.logs = open(self.test_logs, 'w')
 
     def sendPostRequest(self, name, value):
         r = requests.post(self.url, data={name:value})
@@ -45,6 +49,7 @@ class webAppAutotest():
 
         if self.error_counter == 0:
             print "All tests is OK"
+        self.logs.close()
 
     def checkJson(self, data, id):
         data_keys = data.keys()
@@ -57,6 +62,7 @@ class webAppAutotest():
 
     def printError(self, text):
         print text
+        self.logs.write(text + "\n-----\n")
         self.error_counter += 1
 
 if __name__ == "__main__":
